@@ -2,7 +2,6 @@ package ptit.tri_thuc;
 
 import org.springframework.boot.SpringApplication;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -34,143 +33,149 @@ public class EvaluatingEconomicUsingFuzzyApplication {
     };
     public static final String[][][] LOW_ECONOMY = {
             {
-                {"SP"}, {"VL", "LO", "ME"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES
+                {"SP"}, {"VL", "LO", "ME"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES, {"1"}
             },
             {
-                {"SP"}, {"VL", "LO", "ME"}, {"MPC"}, {"HUR"}
+                {"SP"}, {"VL", "LO", "ME"}, {"MPC"}, {"HUR"}, {"1"}
             },
             {
-                {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                {"MP"}, {"LO", "ME", "HI"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES
+                {"MP"}, {"LO", "ME", "HI"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES, {"1"}
             },
             {
-                {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"HUR"}
+                {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"HUR"}, {"1"}
             },
             {
-                {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                {"LP"}, {"ME", "HI", "VH"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES
+                {"LP"}, {"ME", "HI", "VH"}, {"LPC"}, UNEMPLOYMENT_RATE_VARIABLES, {"1"}
             },
             {
-                {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"HUR"}
+                {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"HUR"}, {"1"}
             }
     };
     public static final String[][][] MEDIUM_ECONOMY = {
             {
-                    {"SP"}, {"VL", "LO", "ME"}, {"MPC"}, {"LUR", "MUR"}
+                    {"SP"}, {"VL", "LO", "ME"}, {"MPC"}, {"LUR", "MUR"}, {"1"}
             },
             {
-                    {"SP"}, {"VL", "LO", "ME"}, {"HPC"}, {"HUR"}
+                    {"SP"}, {"VL", "LO", "ME"}, {"HPC"}, {"HUR"}, {"0.5"}
             },
             {
-                    {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"LUR"}
+                    {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"LUR"}, {"1"}
             },
             {
-                    {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"MUR"}
+                    {"MP"}, {"LO", "ME", "HI"}, {"MPC"}, {"MUR"}, {"0.5"}
             },
             {
-                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"HUR"}
+                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"HUR"}, {"0.5"}
             },
             {
-                    {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"LUR"}
+                    {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"LUR"}, {"1"}
             },
             {
-                    {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"MUR"}
+                    {"LP"}, {"ME", "HI", "VH"}, {"MPC"}, {"MUR"}, {"0.5"}
             },
             {
-                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"HUR"}
+                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"HUR"}, {"0.5"}
             }
     };
     public static final String[][][] HIGH_ECONOMY = {
             {
-                    {"SP"}, {"VL", "LO", "ME"}, {"HPC"}, {"LUR", "MUR"}
+                    {"SP"}, {"VL", "LO", "ME"}, {"HPC"}, {"LUR", "MUR"}, {"1"}
             },
             {
-                    {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"SP"}, {"HI", "VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"MP"}, {"VL"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"LUR"}
+                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"LUR"}, {"1"}
             },
             {
-                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"MUR"}
+                    {"MP"}, {"LO", "ME", "HI"}, {"HPC"}, {"MUR"}, {"0.5"}
             },
             {
-                    {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"MP"}, {"VH"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES
+                    {"LP"}, {"VL", "LO"}, GDP_PER_CAPITA_VARIABLES, UNEMPLOYMENT_RATE_VARIABLES, {"0"}
             },
             {
-                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"LUR"}
+                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"LUR"}, {"1"}
             },
             {
-                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"MUR"}
+                    {"LP"}, {"ME", "HI", "VH"}, {"HPC"}, {"MUR"}, {"0.5"}
             },
     };
 
     public static void main(String[] args) {
         SpringApplication.run(EvaluatingEconomicUsingFuzzyApplication.class, args);
-        String result = EvaluatingEconomicUsingFuzzyApplication.evaluatingEconomicLevel("MP", "ME", "HPC", "HUR");
+        HashMap<String, String> result = EvaluatingEconomicUsingFuzzyApplication.evaluatingEconomicLevel("SP", "HI", "HPC", "HUR");
 
         System.out.println(result);
     }
 
-    public static String evaluatingEconomicLevel (String population, String gdp, String gdp_per_capita, String unemployment_rate) {
+    public static HashMap<String, String> evaluatingEconomicLevel (String population, String gdp, String gdp_per_capita, String unemployment_rate) {
+        HashMap<String, String> result = new HashMap<>();
+        boolean condPopulation, condGDP, condGDPPerCapita, condUnemploymentRate;
+
         // LOW
         for (String[][] lowListCases : LOW_ECONOMY ) {
-                Boolean condPopulation = Arrays.asList(lowListCases[0]).contains(population);
-                Boolean condGDP = Arrays.asList(lowListCases[1]).contains(gdp);
-                Boolean condGDPPerCapita = Arrays.asList(lowListCases[2]).contains(gdp_per_capita);
-                Boolean condUnemploymentRate = Arrays.asList(lowListCases[3]).contains(unemployment_rate);
-                if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate)
-                    return "LOW";
+            condPopulation = Arrays.asList(lowListCases[0]).contains(population);
+            condGDP = Arrays.asList(lowListCases[1]).contains(gdp);
+            condGDPPerCapita = Arrays.asList(lowListCases[2]).contains(gdp_per_capita);
+            condUnemploymentRate = Arrays.asList(lowListCases[3]).contains(unemployment_rate);
+            if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate) {
+                result.put("LOW", lowListCases[4][0]);
+            }
         }
 
         // MEDIUM
         for (String[][] mediumListCases : MEDIUM_ECONOMY ) {
-            Boolean condPopulation = Arrays.asList(mediumListCases[0]).contains(population);
-            Boolean condGDP = Arrays.asList(mediumListCases[1]).contains(gdp);
-            Boolean condGDPPerCapita = Arrays.asList(mediumListCases[2]).contains(gdp_per_capita);
-            Boolean condUnemploymentRate = Arrays.asList(mediumListCases[3]).contains(unemployment_rate);
-            if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate)
-                return "MEDIUM";
+            condPopulation = Arrays.asList(mediumListCases[0]).contains(population);
+            condGDP = Arrays.asList(mediumListCases[1]).contains(gdp);
+            condGDPPerCapita = Arrays.asList(mediumListCases[2]).contains(gdp_per_capita);
+            condUnemploymentRate = Arrays.asList(mediumListCases[3]).contains(unemployment_rate);
+            if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate) {
+                result.put("MEDIUM", mediumListCases[4][0]);
+            }
         }
 
         // HIGH
         for (String[][] highListCases : HIGH_ECONOMY ) {
-            Boolean condPopulation = Arrays.asList(highListCases[0]).contains(population);
-            Boolean condGDP = Arrays.asList(highListCases[1]).contains(gdp);
-            Boolean condGDPPerCapita = Arrays.asList(highListCases[2]).contains(gdp_per_capita);
-            Boolean condUnemploymentRate = Arrays.asList(highListCases[3]).contains(unemployment_rate);
-            if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate)
-                return "HIGH";
+            condPopulation = Arrays.asList(highListCases[0]).contains(population);
+            condGDP = Arrays.asList(highListCases[1]).contains(gdp);
+            condGDPPerCapita = Arrays.asList(highListCases[2]).contains(gdp_per_capita);
+            condUnemploymentRate = Arrays.asList(highListCases[3]).contains(unemployment_rate);
+            if (condPopulation && condGDP && condGDPPerCapita && condUnemploymentRate) {
+                result.put("HIGH", highListCases[4][0]);
+            }
         }
 
-        return "UNKNOWN";
+        return result;
     }
 
 }
