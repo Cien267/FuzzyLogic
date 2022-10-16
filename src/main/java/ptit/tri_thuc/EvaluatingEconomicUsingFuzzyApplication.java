@@ -138,6 +138,37 @@ public class EvaluatingEconomicUsingFuzzyApplication {
         System.out.println(result);
     }
 
+    public static String getPopulationLabel(int x) {
+        int SPValue, MPValue, LPValue, result;
+
+        if (x <= 0) {
+            return "SP";
+        } else if (x <= 20) {
+            SPValue = (50 - x)/50;
+            MPValue = x/20;
+            LPValue = x/50;
+        } else if (x <= 30) {
+            SPValue = (50 - x)/50;
+            MPValue = 1;
+            LPValue = x/50;
+        } else if (x <= 50) {
+            SPValue = (50 - x)/50;
+            MPValue = (50 - x)/20;
+            LPValue = x/50;
+        } else {
+            return "LP";
+        }
+
+        result = Math.max(SPValue,Math.max(MPValue, LPValue));
+        if (result == SPValue) {
+            return "SP";
+        } else if (result == MPValue) {
+            return "MP";
+        } else {
+            return "LP";
+        }
+    }
+
     public static HashMap<String, String> evaluatingEconomicLevel (String population, String gdp, String gdp_per_capita, String unemployment_rate) {
         HashMap<String, String> result = new HashMap<>();
         boolean condPopulation, condGDP, condGDPPerCapita, condUnemploymentRate;
